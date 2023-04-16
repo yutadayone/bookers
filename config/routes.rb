@@ -4,4 +4,8 @@ get 'top' => 'homes#top'
 resources :books
 root to: 'homes#top'
 post 'books' => 'books#create'
+get 'books' => 'books#index'
+
+ get 'books/:id' => 'books#show'
+
 end
