@@ -1,15 +1,18 @@
-<div><%=flash[:notice] %></div>
+
 
 <h1>Editing Book</h1>
 
+
 <% if @book.errors.any? %>
-  <%= @book.errors.count %>件のエラーが発生しました
+  <%= @book.errors.count %>error occurred
   <ul>
     <% @book.errors.full_messages.each do |message| %>
       <li><%= message %></li>
     <% end %>
   </ul>
 <% end %>
+
+
 
 <%= form_with model: @book, url:book_path(@book.id), method: :patch do |f| %>
     <p>Title</p>
@@ -28,4 +31,4 @@
 
 
 <%= link_to "Show", book_path(@book.id) %>|
-<%= link_to "Back", books_path(@book.id) %>
+<%= link_to "Back", books_path %>
